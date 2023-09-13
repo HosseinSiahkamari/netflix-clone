@@ -7,6 +7,36 @@
     overflow-x: scroll;
     padding: 20px;
 }
+
+.flash-button-left{
+    position: absolute;
+    left: 50px;
+    margin-top: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    border: none;
+    display: none;
+}
+.flash-button-right{
+    position: absolute;
+    right:50px;
+    margin-top: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    border: none;
+    display: none;
+}
+.row-posters:hover .flash-button-left,
+.row-posters:hover .flash-button-right {
+    display: block;
+    
+}
 .row-posters::-webkit-scrollbar{
     display: none;
 }
@@ -29,4 +59,8 @@
 }
 .row-poster-large:hover{
     transform: scale(1.09);
+}
+h2{
+    color: #fff;
+    margin-left: 20px;
 }
