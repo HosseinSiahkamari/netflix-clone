@@ -3,13 +3,26 @@
 }
 .row-posters{
     display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
+    // overflow-y: hidden;
+    // overflow-x: hidden;
     padding: 20px;
 }
+.row-slide{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+// #row-slide:-webkit-scrollbar{
+//     display: none;
+// }
 
 .flash-button-left{
     position: absolute;
+    height: 40px;
+    width: 40px;
     left: 50px;
     margin-top: 70px;
     border-radius: 50%;
@@ -19,7 +32,9 @@
     opacity: 0.5;
     border: none;
     display: none;
+    z-index: 30;
 }
+
 .flash-button-right{
     position: absolute;
     right:50px;
@@ -31,15 +46,26 @@
     opacity: 0.5;
     border: none;
     display: none;
+    z-index: 30;
+}
+.arrow{
+    width: 30px;
+    height: 30px;
+}
+.flash-button-left:hover,
+.flash-button-right:hover
+{
+    scale: 1.10;
+    background-color: rgba(178, 178, 178, 0.816);
+    transition: all 0.5s;
 }
 .row-posters:hover .flash-button-left,
 .row-posters:hover .flash-button-right {
     display: block;
     
 }
-.row-posters::-webkit-scrollbar{
-    display: none;
-}
+
+
 .row-poster{
     object-fit: contain;
     width: 100%;
