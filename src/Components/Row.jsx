@@ -89,13 +89,13 @@ const Row = ({ title, fetchURL, isLarge, rowId }) => {
 
 
     return (
-        <div className="row-container">
+        <div className="bg-zinc-900">
             <h2>{title} </h2>
             <div className="row-posters">
                 <button onClick={slideLeftHandler} className="flash-button-left">
                     <img className='arrow' src={arrowLeft} alt="arrow" />
                 </button>
-                <div id={dynamicID} className='row-slide'>
+                <div id={dynamicID} className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
                     {movies.map(item => (
                         <img onClick={() => handelClick(item)} className={`row-poster ${isLarge && "row-poster-large"}`} key={item.id} src={`https://image.tmdb.org/t/p/original${isLarge ? item.backdrop_path : item.poster_path}`} alt="item.poster_path" />
                     ))
