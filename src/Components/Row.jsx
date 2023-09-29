@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Row.css';
 import Youtube from 'react-youtube';
 import movieTrailer from 'movie-trailer'
 import arrowLeft from '../assets/arrowLeft.png'
