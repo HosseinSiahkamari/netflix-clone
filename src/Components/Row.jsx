@@ -91,24 +91,23 @@ const Row = ({ title, fetchURL, isLarge, rowId }) => {
     return (
         <div className="bg-zinc-900 relative">
             <h2 className='text-white'>{title} </h2>
-            <div className=' flex justify-center items-center relative'>
-                <button onClick={slideLeftHandler} className="absolute h-10 w-10 left-8  rounded-full opacity-50 z-30 hover:bg-white transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" className='fill-white w-10 h-10 hover:fill-black transition-all' viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+            <div className='group flex justify-center items-center relative'>
+                <button onClick={slideLeftHandler} className="absolute h-10 w-10 left-8  rounded-full opacity-50 z-30">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" className='hidden group-hover:block fill-white w-10 h-10 hover:scale-125 transition-all' viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" /></svg>
                 </button>
                 <div id={dynamicID} className=" w-full m-h-52 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 overflow-x-hidden overflow-y-hidden justify-center">
-                    <div  className='flex flex-row flex-center '>
+                    <div className='flex flex-row flex-center '>
                         {movies.map(item => (
                             <img onClick={() => handelClick(item)} className={`p-2 row-poster ${isLarge && "row-poster-large"}`} key={item.id} src={`https://image.tmdb.org/t/p/original${isLarge ? item.backdrop_path : item.poster_path}`} alt="item.poster_path" />
                         ))
                         }
                     </div>
                 </div>
-                <button onClick={slideRightHandler} id='slideRight' className="absolute h-10 w-10 right-8 rounded-full flex justify-center align-middle opacity-50 z-30  hover:bg-white transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" className='fill-white w-10 h-10 hover:fill-black transition-all' viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                <button onClick={slideRightHandler} id='slideRight' className="absolute h-10 w-10 right-8 rounded-full flex justify-center align-middle opacity-50 z-30  ">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" className='hidden group-hover:block fill-white  w-10 h-10 hover:scale-125 transition-all' viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" /></svg>
                 </button>
             </div>
             {trailerUrl && <Youtube videoId={trailerUrl} opts={opts} />}
-
         </div>);
 }
 
