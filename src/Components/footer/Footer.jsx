@@ -1,4 +1,3 @@
-import './Footer.css'
 import instagram from '../../assets/image/instagram.png'
 import youtube from '../../assets/image/youtube.png'
 import twitter from '../../assets/image/twitter.png'

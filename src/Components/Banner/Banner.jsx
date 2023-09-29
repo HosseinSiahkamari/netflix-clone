@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from 'axios'
-import './Banner.css'
 
 const Banner = ({ fetchURL }) => {
     const [movies, setMovies] = useState([]);
